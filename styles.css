@@ -250,6 +250,27 @@ Remove or comment-out the code block below to see how the browser will fall-back
     display: inline;
 }
 
+.cat-names {
+    font-size: 2rem;
+    color: white;
+
+}
+
+
+
+table {
+    border-collapse: collapse;
+}
+
+table, td {
+    border: none;
+}
+
+td {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
 #wiki {
     background-color: #61688B;
     font-size: 40px;
@@ -370,3 +391,6 @@ Remove or comment-out the code block below to see how the browser will fall-back
     cursor: pointer;
     transition: transform 0.2s cubic-bezier(0, 0, 0, 0.21);
   }
+
+
+
