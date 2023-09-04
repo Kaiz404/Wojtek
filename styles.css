@@ -4,16 +4,19 @@
   }
 
 body {
+    font-family: Inter;
     display: flex;
     flex-direction: column;
     margin: 0px;
     padding:0px;
+    
 }
 
-
+  
 p{
     display: flex;
     justify-content:center;
+    font-size: 1.5rem;
 }
 
 a {
@@ -50,19 +53,6 @@ a:hover {
     background: radial-gradient(50% 50.00% at 50% 50.00%, #1F1E1E 0%, #000 100%);
 }
 
-#Gallery {
-    width: 2656px;
-    height: 44.6875rem;
-    object-fit: contain;
-    background-image: url("bg2.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-}
-
-#slides {
-}
-
 #transistion {
     margin:0px;
     height: 50px;
@@ -73,7 +63,7 @@ a:hover {
     align-items: center;
     justify-content: center;
     
-    background-image: url("bgpaper.png");
+    background-image: url("backgrounds/bgpaper.png");
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
@@ -87,10 +77,11 @@ a:hover {
     line-height: normal;
 }
 
-#Introduction > h3 {
+.header {
     font-size: 70px;
     font-weight: 400;
     line-height: normal;
+    text-align: center;
 }
 
 #intro-container {
@@ -104,7 +95,7 @@ a:hover {
 }
 
 #Background {
-    background-image: url("bg3.png");
+    background-image: url("backgrounds/bg3.png");
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
@@ -113,6 +104,8 @@ a:hover {
 }
 
 #Background-content {
+    display: flex;
+    flex-direction: row;
     font-weight: 400;
     text-align: center;
     color: #EAEAEA;
@@ -124,7 +117,7 @@ a:hover {
 }
 
 #AgeofWar {
-    background-image: url("bgpaper.png");
+    background-image: url("backgrounds/bgpaper.png");
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
@@ -138,8 +131,13 @@ a:hover {
     line-height: normal;
 }
 
+
+#AgeofWar-content {
+    display: flex;
+}
+
 #PostWar {
-    background-image: url("bg3.png");
+    background-image: url("backgrounds/bg3.png");
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
@@ -152,7 +150,7 @@ a:hover {
 }
 
 #Memoir {
-    background-image: url("bgpaper.png");
+    background-image: url("backgrounds/bgpaper.png");
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
@@ -166,14 +164,90 @@ a:hover {
     line-height: normal;
 }
 
+
+
+
+#Gallery {
+    height: 140rem;
+    object-fit: contain;
+    background-image: url("backgrounds/bg2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+}
+
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+.gallery {
+	max-width: 100rem;
+	margin: 0 auto;
+	padding: 0 2rem 2rem;
+	display: flex;
+	flex-wrap: wrap;
+	/* Compensate for excess margin on outer gallery flex items */
+	margin: -1rem -1rem;
+}
+
+.gallery-item {
+	/* Minimum width of 24rem and grow to fit available space */
+	flex: 1 0 1rem;
+	/* Margin value should be half of grid-gap value as margins on flex items don't collapse */
+	margin: 1rem;
+	box-shadow: 0.3rem 0.4rem 0.4rem rgba(0, 0, 0, 0.4);
+	overflow: hidden;
+}
+
+.gallery-image {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 400ms ease-out;
+}
+
+.gallery-image:hover {
+	transform: scale(1.15);
+}
+
+/*
+
+The following rule will only run if your browser supports CSS grid.
+
+Remove or comment-out the code block below to see how the browser will fall-back to flexbox styling. 
+
+*/
+
+@supports (display: grid) {
+	.gallery {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+		grid-gap: 2rem;
+	}
+
+	.gallery,
+	.gallery-item {
+		margin: 0;
+	}
+}
+
+
+
+
+
 #credits {
     display: flex;
     justify-content: space-around;
 }
 
-#credits > img {
+.cat-icons {
     width:200px;
     height: auto;
+    display: inline;
 }
 
 #wiki {
@@ -185,3 +259,114 @@ a:hover {
 #wiki > p {
     margin: 0px;
 }
+
+  
+.container {
+    grid-column: 2;
+    position: relative;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 5px;
+    /* background-color: rgba(0,0,0,.4); */
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.16), 0px 3px 10px rgba(0, 0, 0, 0.23);
+    overflow: hidden;
+  }
+  
+  
+  .content {
+    transition: max-height 1s cubic-bezier(0, 0, 0, 2.1);
+    max-height: 305px;
+    overflow: hidden;
+  }
+  
+  .expanded {
+    transform: rotate(180deg);
+  }
+  
+
+
+
+  .hidden1  {
+    max-height: 0;
+  }
+  
+  .read-more-button1 {
+    position: absolute;
+    border-top: 15px solid #fff;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    top: 60px;
+    right: 450px;
+    filter: drop-shadow(0px 3px 2px #999);
+    cursor: pointer;
+    transition: transform 0.2s cubic-bezier(0, 0, 0, 0.21);
+  }
+  
+
+
+  .hidden2 {
+    max-height: 0;
+  }
+  
+  .read-more-button2 {
+    position: absolute;
+    border-top: 15px solid #fff;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    top: 60px;
+    right: 450px;
+    filter: drop-shadow(0px 3px 2px #999);
+    cursor: pointer;
+    transition: transform 0.2s cubic-bezier(0, 0, 0, 0.21);
+  }
+  
+
+
+
+  .hidden3 {
+    max-height: 0;
+  }
+  
+  .read-more-button3 {
+    position: absolute;
+    border-top: 15px solid #000;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    top: 60px;
+    right: 350px;
+    filter: drop-shadow(0px 3px 2px #999);
+    cursor: pointer;
+    transition: transform 0.2s cubic-bezier(0, 0, 0, 0.21);
+  }
+
+  .hidden4 {
+    max-height: 0;
+  }
+  
+  .read-more-button4 {
+    position: absolute;
+    border-top: 15px solid #000;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    top: 60px;
+    right: 270px;
+    filter: drop-shadow(0px 3px 2px #999);
+    cursor: pointer;
+    transition: transform 0.2s cubic-bezier(0, 0, 0, 0.21);
+  }
+
+  .hidden5 {
+    max-height: 0;
+  }
+  
+  .read-more-button5 {
+    position: absolute;
+    border-top: 15px solid #000;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    top: 60px;
+    right: 370px;
+    filter: drop-shadow(0px 3px 2px #999);
+    cursor: pointer;
+    transition: transform 0.2s cubic-bezier(0, 0, 0, 0.21);
+  }
