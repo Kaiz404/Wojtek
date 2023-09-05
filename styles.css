@@ -172,6 +172,7 @@ a:hover {
     object-fit: contain;
     background-image: url("backgrounds/bg2.png");
     background-repeat: no-repeat;
+    background-position:30%;
     background-size: cover;
     width: 100%;
 }
